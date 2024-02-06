@@ -18,6 +18,7 @@ const loadHomePage = function (){
     let pMonFri = document.createElement('span');
     let pSatSun = document.createElement('span');
 
+    heading.textContent = 'About Us';
     pShortDesc.textContent = 'This is a description of our restaurant.'
     pMonFri.textContent = "Mon-Fri: 9am - 9pm";
     pSatSun.textContent = "Sat-Sun: 8am - 10pm";
