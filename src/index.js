@@ -4,6 +4,6 @@ import loadHomePage from "./home.js";
 
 // TODO: Add a display controller to control and manage all of this so we can render once through it and have internal logic controlled there but not as global variables
 
-let contentDisplay = document.querySelector('body');
+let mainContainer = document.querySelector('.bg');
 
-contentDisplay.append(loadHomePage());
+mainContainer.append(loadHomePage());
