@@ -1,1 +1,1 @@
-alert('Hi!');
+// TODO: Start with loading the initial part of page with event listeners to display other parts of the page
