@@ -5,6 +5,7 @@ const loadMenuPage = function (){
     let itemsDisplay = document.createElement('div');
     itemsDisplay.classList.add('wrapper');
     let heading = document.createElement('h1');
+    let seeMoreNote = document.createElement('p');
     // Prevent duplication by managing only/writing out the differences as unique instances
     let menuItems = [{name: 'NAME 1', picUrl: 'URL', desc: 'Desc 1'}, {name: 'NAME 2', picUrl: 'URL', desc: 'Desc 2'}, {name: 'NAME 3',  picUrl: 'URL', desc: 'Desc 3'}];
 
@@ -26,8 +27,11 @@ const loadMenuPage = function (){
         itemsDisplay.append(itemCard);
     });
 
+    seeMoreNote.textContent = 'see more...'
+
     menuDisplay.append(heading);
     menuDisplay.append(itemsDisplay);
+    menuDisplay.append(seeMoreNote);
 
     return menuDisplay;
 };
