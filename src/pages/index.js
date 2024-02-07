@@ -1,7 +1,7 @@
 import loadHomeSection from "./home.js";
 import loadContactSection from "./contact.js";
 import loadMenuSection from "./menu.js";
-import '../styles/style.css';
+// import '../styles/style.css';
 
 // Display controller to control and manage all of the rendering logic (including initial single time rendering and other services) so there is no pollution of global variables
 let displayController = function () {

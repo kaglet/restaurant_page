@@ -1,5 +1,4 @@
 import '../styles/style.css';
-import homeBgUrl from '../assets/images/sunorwind.jpg';
 
 /* 
 NOTE: Each page manages itself loading and itself loading only. 
@@ -30,11 +29,7 @@ const loadHomePage = function (){
     about.append(heading, pShortDesc, pHours);
 
     homePage.append(about);
-    // homePage.classList.add('hello');
-    const homeBg = new Image();
-    homeBg.src = homeBgUrl;
-
-    homePage.append(homeBg);
+    homePage.classList.add('hello');
 
     return homePage;
 };
