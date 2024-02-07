@@ -1,3 +1,5 @@
+import '../styles/style.css';
+
 /* 
 NOTE: Each page manages itself loading and itself loading only. 
 Global clear function can be elsewhere regardless of the specific contents here. 
@@ -27,6 +29,7 @@ const loadHomePage = function (){
     about.append(heading, pShortDesc, pHours);
 
     homePage.append(about);
+    homePage.classList.add('hello');
 
     return homePage;
 };
