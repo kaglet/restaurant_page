@@ -1,5 +1,3 @@
-import '../styles/style.css';
-
 /* 
 NOTE: Each page manages itself loading and itself loading only. 
 Global clear function can be elsewhere regardless of the specific contents here. 

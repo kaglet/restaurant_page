@@ -1,0 +1,11 @@
+@font-face {
+  font-family: my-cool-font;
+  src: url(../assets/fonts/ProtestRiot-Regular.ttf);
+  font-weight: 600;
+  font-style: normal;
+}
+
+.hello {
+  color: red;
+  font-family: my-cool-font, sans-serif;
+}

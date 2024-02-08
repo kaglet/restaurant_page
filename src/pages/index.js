@@ -1,9 +1,11 @@
 import loadHomeSection from "./home.js";
 import loadContactSection from "./contact.js";
 import loadMenuSection from "./menu.js";
-// import '../styles/style.css';
+import './style.css';
+// import ImageURL from './sunorwind.jpg';
 
-// Display controller to control and manage all of the rendering logic (including initial single time rendering and other services) so there is no pollution of global variables
+// Display controller to control and manage all of the rendering logic (including initial single time rendering and other services) 
+// This module is so there is no pollution of global variables
 let displayController = function () {
     let mainPageContainer = document.querySelector('div#content');
     let homeBtn = document.querySelector('button.home');
