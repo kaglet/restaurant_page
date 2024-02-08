@@ -5,7 +5,65 @@
   font-style: normal;
 }
 
-.hello {
-  color: red;
-  font-family: my-cool-font, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1.9rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  gap: 5.6rem;
+}
+
+nav > button {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+}
+
+.home:not(button) {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  padding: 5rem;
+}
+
+.about {
+  border-radius: 0.7rem;
+  background-color: rgba(12, 4, 62, 0.7);
+  padding: 1rem;
+  width: 30rem;
+  align-self: stretch;
+}
+
+div#content {
+  flex: 1;
+  display: flex;
+}
+
+.about span {
+  display: block;
+}
+
+.about span:first-of-type {
+  margin-bottom: 0.4rem;
+}
+
+footer {
+  display: grid;
+  place-content: center;
 }

@@ -11,6 +11,7 @@ const loadHomePage = function (){
     homePage.classList.add('home');
 
     let about = document.createElement('section');
+    about.classList.add('about');
 
     let heading = document.createElement('h2');
     let pShortDesc = document.createElement('p');
@@ -27,7 +28,6 @@ const loadHomePage = function (){
     about.append(heading, pShortDesc, pHours);
 
     homePage.append(about);
-    homePage.classList.add('hello');
 
     return homePage;
 };
