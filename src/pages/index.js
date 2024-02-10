@@ -48,6 +48,8 @@ let displayController = function () {
     homeBtn.addEventListener('click', () => {
         clearDisplay();
         let homeSection = loadHomeSection();
+        // TODO: Remove scrollbar on css property until animation is definitely done
+        // Have to catch swipe left and right though and it doesn't seem that worth it.
         homeSection.classList.add('left');
         mainPageContainer.append(homeSection);
         mainBackgroundController.giveImageToBackground();
@@ -56,12 +58,12 @@ let displayController = function () {
     menuBtn.addEventListener('click', () => {
         clearDisplay();
         mainPageContainer.append(loadMenuSection());
-        mainBackgroundController.giveColorToBackground('red');
+        mainBackgroundController.giveColorToBackground('black');
     });
 
     contactBtn.addEventListener('click', () => {
         clearDisplay();
         mainPageContainer.append(loadContactSection());
-        mainBackgroundController.giveColorToBackground('red');
+        mainBackgroundController.giveColorToBackground('black');
     });
 }();

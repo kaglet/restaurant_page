@@ -3,8 +3,8 @@ const loadMenuPage = function (){
     menuDisplay.classList.add('menu');
 
     let itemsDisplay = document.createElement('div');
-    itemsDisplay.classList.add('wrapper');
-    let heading = document.createElement('h1');
+    itemsDisplay.classList.add('items', 'display');
+    let heading = document.createElement('h2');
     let seeMoreNote = document.createElement('p');
     // Prevent duplication by managing only/writing out the differences as unique instances
     let menuItems = [{name: 'NAME 1', picUrl: 'URL', desc: 'Desc 1'}, {name: 'NAME 2', picUrl: 'URL', desc: 'Desc 2'}, {name: 'NAME 3',  picUrl: 'URL', desc: 'Desc 3'}];
