@@ -50,7 +50,7 @@ let displayController = function () {
         let homeSection = loadHomeSection();
         // TODO: Remove scrollbar on css property until animation is definitely done
         // Have to catch swipe left and right though and it doesn't seem that worth it.
-        homeSection.classList.add('left');
+        // homeSection.classList.add('left');
         mainPageContainer.append(homeSection);
         mainBackgroundController.giveImageToBackground();
     });

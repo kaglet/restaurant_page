@@ -12,6 +12,7 @@ const loadHomePage = function (){
 
     let about = document.createElement('section');
     about.classList.add('about');
+    about.classList.add('wobble');
 
     let heading = document.createElement('h2');
     let pShortDesc = document.createElement('p');
