@@ -15,13 +15,17 @@ let displayController = function () {
     // Use this module object locally within this object
     let mainBackgroundController = (() => {
         const giveImageToBackground = () => {
-            document.querySelector('body').style.backgroundImage = `url(${mainBgUrl})`;
+            let body = document.querySelector('body');
+            body.style.backgroundImage = `url(${mainBgUrl})`;
+            body.classList.add('blur');
             // document.querySelector('body').style.objectFit = 'cover';
         };
 
         const giveColorToBackground = (color) => {
-            document.querySelector('body').style.backgroundImage = "none";
-            document.querySelector('body').style.backgroundColor = color;
+            let body = document.querySelector('body');
+            body.style.backgroundImage = "none";
+            body.classList.remove('blur');
+            body.style.backgroundColor = color;
         };
 
         return {giveImageToBackground, giveColorToBackground};
