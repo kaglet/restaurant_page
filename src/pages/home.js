@@ -18,14 +18,16 @@ const loadHomePage = function (){
     let pHours = document.createElement('p');
     let pMonFri = document.createElement('span');
     let pSatSun = document.createElement('span');
+    let timesHeading = document.createElement('h2');
 
     heading.textContent = 'About Us';
     pShortDesc.textContent = 'Welcome to Haute Sushi Lounge, where culinary artistry meets sophistication. Immerse yourself in a fine dining experience that transcends the ordinary. Our expert chefs craft each sushi roll with precision, using only the freshest and finest ingredients to elevate your palate.'
+    timesHeading.textContent = 'Opening Times';
     pMonFri.textContent = "Mon-Fri: 9am - 9pm";
     pSatSun.textContent = "Sat-Sun: 8am - 10pm";
 
     pHours.append(pMonFri, pSatSun);
-    about.append(heading, pShortDesc, pHours);
+    about.append(heading, pShortDesc, timesHeading, pHours);
 
     homePage.append(about);
 
