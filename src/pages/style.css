@@ -33,45 +33,37 @@ body {
 }
 
 .wobble {
-  animation: wobble 1.5s cubic-bezier(.17, .67, .62, .74) 1;
+  animation: wobble 0.75s ease-in 1;
   will-change: transform;
 }
 
 @keyframes wobble {
   0% {
-    transform: translateX(0%);
+    transform: scale(1.1);
   }
 
-  15% {
-    transform: translateX(-20%) rotate(-4deg) scale(1.01);
-  }
-
-  30% {
-    transform: translateX(17%) rotate(3deg) scale(1.02);
-  }
-
-  45% {
-    transform: translateX(-15%) rotate(-3deg) scale(1.03);
-  }
-
-  60% {
-    transform: translateX(10%) rotate(2deg) scale(1.04);
+  50% {
+    transform: scale(0.99);
   }
 
   75% {
-    transform: translateX(-5%) rotate(-1deg) scale(1.03);
+    transform: rotate(1.5deg);
   }
 
-  90% {
-    transform: translateX(-5%) rotate(-1deg) scale(1.02);
+  87% {
+    transform: rotate(-1.8deg);
   }
 
-  95% {
-    transform: translateX(-5%) rotate(-1deg) scale(1.01);
+  92% {
+    transform: rotate(0.7deg);
+  }
+
+  97% {
+    transform: rotate(-0.9deg);
   }
 
   100% {
-    transform: translateX(0%);
+    transform: scale(1);
   }
 }
 
@@ -109,12 +101,33 @@ nav {
   gap: 5.6rem;
 }
 
-nav>button {
+nav > button {
   appearance: none;
   border: none;
   padding: 0.7rem 5.9rem;
   background-color: var(--main-theme-clr);
   font: inherit;
+  border-radius: var(--border-rad-small);
+  position: relative;
+}
+
+nav > button::after {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  width: 5%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgb(132, 40, 218, 0.3);
+}
+
+nav > button:hover::after {
+  opacity: 1;
+  width: 100%;
   border-radius: var(--border-rad-small);
 }
 
@@ -257,10 +270,19 @@ footer a {
 }
 
 footer {
+  position: relative;
   margin: auto;
   width: max-content;
 }
 
 button:active {
   transform: scale(0.92);
+}
+
+a {
+  position: relative;
+}
+
+a:hover {
+  top: -5px;
 }
