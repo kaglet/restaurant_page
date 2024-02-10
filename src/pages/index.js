@@ -2,7 +2,7 @@ import loadHomeSection from "./home.js";
 import loadContactSection from "./contact.js";
 import loadMenuSection from "./menu.js";
 import './style.css';
-import mainBgUrl from "../assets/images/sunorwind.jpg";
+import mainBgUrl from "../assets/images/jane-saq5eSdmNXU-unsplash.jpg";
 
 // Display controller to control and manage all of the rendering logic (including initial single time rendering and other services) 
 // This module is so there is no pollution of global variables
@@ -16,7 +16,7 @@ let displayController = function () {
     let mainBackgroundController = (() => {
         const giveImageToBackground = () => {
             document.querySelector('body').style.backgroundImage = `url(${mainBgUrl})`;
-            document.querySelector('body').style.objectFit = 'cover';
+            // document.querySelector('body').style.objectFit = 'cover';
         };
 
         const giveColorToBackground = (color) => {
@@ -50,12 +50,12 @@ let displayController = function () {
     menuBtn.addEventListener('click', () => {
         clearDisplay();
         mainPageContainer.append(loadMenuSection());
-        mainBackgroundController.giveColorToBackground(red);
+        mainBackgroundController.giveColorToBackground('red');
     });
 
     contactBtn.addEventListener('click', () => {
         clearDisplay();
         mainPageContainer.append(loadContactSection());
-        mainBackgroundController.giveColorToBackground(red);
+        mainBackgroundController.giveColorToBackground('red');
     });
 }();
