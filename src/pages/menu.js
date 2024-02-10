@@ -23,6 +23,7 @@ const loadMenuPage = function (){
         itemDescDisplay.textContent = menuItem.desc;
 
         itemCard.append(itemNameDisplay, itemPicDisplay, itemDescDisplay);
+        itemCard.classList.add('wobble');
 
         itemsDisplay.append(itemCard);
     });

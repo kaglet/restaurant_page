@@ -11,8 +11,7 @@ const loadHomePage = function (){
     homePage.classList.add('home');
 
     let about = document.createElement('section');
-    about.classList.add('about');
-    about.classList.add('wobble');
+    about.classList.add('about', 'wobble');
 
     let heading = document.createElement('h2');
     let pShortDesc = document.createElement('p');

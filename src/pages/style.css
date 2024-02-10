@@ -14,7 +14,7 @@
 }
 
 :root {
-  font-family: my-cool-font ,system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: my-cool-font, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: larger;
   --main-theme-clr: rgb(219, 2, 2);
 }
@@ -31,25 +31,54 @@ body {
 }
 
 .wobble {
-  animation: wobble 1.3s ease-in-out 1;
+  animation: wobble 1.5s cubic-bezier(.17,.67,.62,.74) 1;
   will-change: transform;
 }
 
-@keyframes wobble { 
-  0% { transform: translateX(0%); } 
-  15% { transform: translateX(-25%) rotate(-5deg); } 
-  30% { transform: translateX(20%) rotate(3deg); } 
-  45% { transform: translateX(-15%) rotate(-3deg); } 
-  60% { transform: translateX(10%) rotate(2deg); } 
-  75% { transform: translateX(-5%) rotate(-1deg); } 
-  100% { transform: translateX(0%); } 
+@keyframes wobble {
+  0% {
+    transform: translateX(0%);
+  }
+
+  15% {
+    transform: translateX(-25%) rotate(-5deg) scale(1.01);
+  }
+
+  30% {
+    transform: translateX(20%) rotate(3deg) scale(1.02);
+  }
+
+  45% {
+    transform: translateX(-15%) rotate(-3deg) scale(1.03);
+  }
+
+  60% {
+    transform: translateX(10%) rotate(2deg) scale(1.04);
+  }
+
+  75% {
+    transform: translateX(-5%) rotate(-1deg) scale(1.03);
+  }
+
+  90% {
+    transform: translateX(-5%) rotate(-1deg) scale(1.02);
+  }
+
+  95% {
+    transform: translateX(-5%) rotate(-1deg) scale(1.01);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 h1 {
   font-size: 2.7rem;
 }
 
-header, footer {
+header,
+footer {
   padding: 1.4rem;
 }
 
@@ -78,7 +107,7 @@ nav {
   gap: 5.6rem;
 }
 
-nav > button {
+nav>button {
   appearance: none;
   border: none;
   padding: 0.7rem 5.9rem;
@@ -101,15 +130,15 @@ nav > button {
   align-self: stretch;
 }
 
-.about > :nth-child(n) {
+.about> :nth-child(n) {
   margin-bottom: 0.8em;
 }
 
-.about > h2 {
+.about>h2 {
   font-size: 1.9rem;
 }
 
-.about > :nth-child(n):not(h2, h3) {
+.about> :nth-child(n):not(h2, h3) {
   font-size: 1.1rem;
   font-weight: 100;
 }
@@ -119,7 +148,7 @@ div#content {
   display: flex;
 }
 
-#content > :nth-child(n) {
+#content> :nth-child(n) {
   position: relative;
 }
 
@@ -140,7 +169,7 @@ div#content {
   padding: 2rem;
 }
 
-.menu > h2 {
+.menu>h2 {
   margin: auto;
   width: fit-content;
 }
