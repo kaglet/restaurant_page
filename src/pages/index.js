@@ -47,7 +47,9 @@ let displayController = function () {
 
     homeBtn.addEventListener('click', () => {
         clearDisplay();
-        mainPageContainer.append(loadHomeSection());
+        let homeSection = loadHomeSection();
+        homeSection.classList.add('left');
+        mainPageContainer.append(homeSection);
         mainBackgroundController.giveImageToBackground();
     });
 

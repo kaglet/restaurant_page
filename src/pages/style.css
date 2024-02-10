@@ -27,7 +27,38 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  overflow: hidden;
   /* TODO: Check how to add background picture better to page so it does not stretch */
+}
+
+.right {
+  animation: swipe_right 0.3s ease-in-out 1;
+  will-change: transform;
+}
+
+.left {
+  animation: swipe_left 0.3s ease-in-out 1;
+  will-change: transform;
+}
+
+@keyframes swipe_right {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes swipe_left {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }  
 }
 
 h1 {
@@ -102,6 +133,10 @@ nav > button {
 div#content {
   flex: 1;
   display: flex;
+}
+
+#content > :nth-child(n) {
+  position: relative;
 }
 
 .about span {
