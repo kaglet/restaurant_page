@@ -11,18 +11,17 @@ let displayController = function () {
     let homeBtn = document.querySelector('button.home');
     let menuBtn = document.querySelector('button.menu');
     let contactBtn = document.querySelector('button.contact');
+    let body = document.querySelector('body');
     // Load background in addition to pages to show on body itself as background
     // Use this module object locally within this object
     let mainBackgroundController = (() => {
         const giveImageToBackground = () => {
-            let body = document.querySelector('body');
             body.style.backgroundImage = `url(${mainBgUrl})`;
             body.classList.add('blur');
             // document.querySelector('body').style.objectFit = 'cover';
         };
 
         const giveColorToBackground = (color) => {
-            let body = document.querySelector('body');
             body.style.backgroundImage = "none";
             body.classList.remove('blur');
             body.style.backgroundColor = color;
@@ -30,6 +29,18 @@ let displayController = function () {
 
         return {giveImageToBackground, giveColorToBackground};
     })();
+
+    let contentBackgroundController = (() => {
+        const giveColorToBackground = () => {
+            mainPageContainer.classList.add('colored');
+        };
+
+        const removeColorFromBackground = () => {
+            mainPageContainer.classList.remove('colored');
+        };
+
+        return { giveColorToBackground, removeColorFromBackground };
+    })()
 
     const initPage = () => {
         mainBackgroundController.giveImageToBackground();
@@ -47,22 +58,22 @@ let displayController = function () {
 
     homeBtn.addEventListener('click', () => {
         clearDisplay();
+        contentBackgroundController.removeColorFromBackground();
         let homeSection = loadHomeSection();
-        // TODO: Remove scrollbar on css property until animation is definitely done
-        // Have to catch swipe left and right though and it doesn't seem that worth it.
-        // homeSection.classList.add('left');
         mainPageContainer.append(homeSection);
         mainBackgroundController.giveImageToBackground();
     });
 
     menuBtn.addEventListener('click', () => {
         clearDisplay();
+        contentBackgroundController.giveColorToBackground();
         mainPageContainer.append(loadMenuSection());
         mainBackgroundController.giveColorToBackground('black');
     });
 
     contactBtn.addEventListener('click', () => {
         clearDisplay();
+        contentBackgroundController.giveColorToBackground();
         mainPageContainer.append(loadContactSection());
         mainBackgroundController.giveColorToBackground('black');
     });

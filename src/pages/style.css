@@ -17,6 +17,8 @@
   font-family: my-cool-font, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: larger;
   --main-theme-clr: rgb(219, 2, 2);
+  --border-rad-large: 0.8rem;
+  --border-rad-small: 0.3rem;
 }
 
 body {
@@ -31,7 +33,7 @@ body {
 }
 
 .wobble {
-  animation: wobble 1.5s cubic-bezier(.17,.67,.62,.74) 1;
+  animation: wobble 1.5s cubic-bezier(.17, .67, .62, .74) 1;
   will-change: transform;
 }
 
@@ -113,6 +115,7 @@ nav>button {
   padding: 0.7rem 5.9rem;
   background-color: var(--main-theme-clr);
   font: inherit;
+  border-radius: var(--border-rad-small);
 }
 
 .home:not(button) {
@@ -148,6 +151,10 @@ div#content {
   display: flex;
 }
 
+div#content.colored {
+  background-color: rgb(33, 33, 33);
+}
+
 #content> :nth-child(n) {
   position: relative;
 }
@@ -168,9 +175,10 @@ div#content {
   background-color: var(--main-theme-clr);
   width: 80%;
   padding: 2rem;
+  /* border-radius: var(--border-rad-large); */
 }
 
-.menu > h2 {
+.menu>h2 {
   letter-spacing: 0.2rem;
   font-size: 2.6rem;
   margin: 0 auto 1.4rem auto;
@@ -194,7 +202,7 @@ div#content {
   flex: 1;
 }
 
-.menu > p:last-child {
+.menu>p:last-child {
   margin: 0 0 0 auto;
   width: fit-content;
   flex: 0;
@@ -217,9 +225,11 @@ div#content {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: var(--border-rad-large);
 }
 
 .item.card p {
+  border-radius: var(--border-rad-large);
   background-color: rgba(34, 34, 34, 0.5);
   opacity: 1;
   backdrop-filter: blur(4px);

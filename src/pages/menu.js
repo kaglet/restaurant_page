@@ -31,7 +31,7 @@ const loadMenuPage = function () {
         itemPicDisplay.textContent = menuItem.altText;
         itemPicDisplay.style.backgroundImage = `url("${menuItem.picUrl}")`;
         itemPicDisplay.classList.add('item', 'pic');
-        itemDescDisplay.textContent = menuItem.desc + '\r\n~ Hover over to reveal ~';
+        itemDescDisplay.textContent = menuItem.desc /*+ '\r\n~ Hover over to reveal ~'*/;
 
         itemPicDisplay.append(itemDescDisplay);
         itemCard.append(itemNameDisplay, itemPicDisplay);
