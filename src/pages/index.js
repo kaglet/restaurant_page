@@ -2,7 +2,7 @@ import loadHomeSection from "./home.js";
 import loadContactSection from "./contact.js";
 import loadMenuSection from "./menu.js";
 import './style.css';
-import mainBgUrl from "../assets/images/jane-saq5eSdmNXU-unsplash.jpg";
+import mainBgUrl from "../assets/images/tamas-pap-zali_zGDWo8-unsplash.jpg";
 
 // Display controller to control and manage all of the rendering logic (including initial single time rendering and other services) 
 // This module is so there is no pollution of global variables
@@ -32,8 +32,8 @@ let displayController = function () {
     })();
 
     const initPage = () => {
-        mainPageContainer.append(loadHomeSection());
         mainBackgroundController.giveImageToBackground();
+        mainPageContainer.append(loadHomeSection());
     };
 
     initPage();

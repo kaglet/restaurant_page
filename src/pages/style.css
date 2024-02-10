@@ -16,6 +16,7 @@
 :root {
   font-family: my-cool-font ,system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: larger;
+  --main-theme-clr: rgb(219, 2, 2);
 }
 
 body {
@@ -29,12 +30,12 @@ body {
   /* TODO: Check how to add background picture better to page so it does not stretch */
 }
 
-header, footer {
-  padding: 1.4rem;
+h1 {
+  font-size: 2.7rem;
 }
 
-header, .about {
-  
+header, footer {
+  padding: 1.4rem;
 }
 
 body.blur::before {
@@ -43,7 +44,7 @@ body.blur::before {
   height: 100%;
   z-index: -1;
   position: fixed;
-  background-color: rgba(176, 176, 176, 0.3);
+  background-color: rgba(45, 45, 45, 0.3);
   backdrop-filter: blur(4px);
 }
 
@@ -51,6 +52,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.home {
+  display: flex;
 }
 
 nav {
@@ -61,7 +66,8 @@ nav {
 nav > button {
   appearance: none;
   border: none;
-  background-color: transparent;
+  padding: 0.7rem 5.9rem;
+  background-color: var(--main-theme-clr);
   font: inherit;
 }
 

@@ -20,7 +20,7 @@ const loadHomePage = function (){
     let pSatSun = document.createElement('span');
 
     heading.textContent = 'About Us';
-    pShortDesc.textContent = 'This is a description of our restaurant.'
+    pShortDesc.textContent = 'Welcome to Haute Sushi Lounge, where culinary artistry meets sophistication. Immerse yourself in a fine dining experience that transcends the ordinary. Our expert chefs craft each sushi roll with precision, using only the freshest and finest ingredients to elevate your palate.'
     pMonFri.textContent = "Mon-Fri: 9am - 9pm";
     pSatSun.textContent = "Sat-Sun: 8am - 10pm";
 
