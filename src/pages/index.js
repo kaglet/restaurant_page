@@ -12,13 +12,13 @@ let displayController = function () {
     let menuBtn = document.querySelector('button.menu');
     let contactBtn = document.querySelector('button.contact');
     let body = document.querySelector('body');
+
     // Load background in addition to pages to show on body itself as background
     // Use this module object locally within this object
     let mainBackgroundController = (() => {
         const giveImageToBackground = () => {
             body.style.backgroundImage = `url(${mainBgUrl})`;
             body.classList.add('blur');
-            // document.querySelector('body').style.objectFit = 'cover';
         };
 
         const giveColorToBackground = (color) => {
@@ -40,11 +40,83 @@ let displayController = function () {
         };
 
         return { giveColorToBackground, removeColorFromBackground };
-    })()
+    })();
+
+    let creditsDisplayController = (() => {
+        let selfCredit = document.createElement('a');
+        selfCredit.href = "https://unsplash.com/photos/orange-flower-with-black-background-zali_zGDWo8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash";
+        selfCredit.textContent = "kaglet";
+
+        let unsplashCredit = document.createElement('a');
+        unsplashCredit.href = "https://unsplash.com/photos/orange-flower-with-black-background-zali_zGDWo8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash";
+        unsplashCredit.textContent = 'Unsplash';
+
+        let homeBgCredit = document.createElement('a');
+
+        homeBgCredit.href = 'https://unsplash.com/@tamasp?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash';
+        homeBgCredit.textContent = 'Tamas Pap';
+
+        let homeBgUrl = document.createElement('a');
+
+        let NigiriCredit  = document.createElement('a');
+        let UramakiCredit = document.createElement('a');
+        let InariCredit = document.createElement('a');
+
+        NigiriCredit.href = 'https://unsplash.com/@lu_pl_ph?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash';
+        NigiriCredit.textContent = 'Louigi Pozzoli';
+        
+        UramakiCredit.href = 'https://unsplash.com/@ahtziri?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash';
+        UramakiCredit.textContent = 'Ahtziri Lagarde';
+
+        InariCredit.href = 'https://unsplash.com/@mahmoud_fawzy100?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash';
+        InariCredit.textContent = 'Mahmoud Fawzy';
+
+        let NigiriImgUrl  = document.createElement('a');
+        let UramakiImgUrl = document.createElement('a');
+        let InariImgUrl = document.createElement('a');
+
+        let restaurantImgCredit = document.createElement('a');
+
+        restaurantImgCredit.href = 'https://unsplash.com/@krissevinc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash';
+        restaurantImgCredit.textContent = 'Kris Sevinc';
+
+        let restaurantImgUrl = document.createElement('a');
+
+        let footer = document.querySelector('footer');
+
+        const appendStartCredits = () => {
+            footer.append('Made by ', selfCredit, ' | ');
+        }
+
+        const appendHomeCredits = () => {
+            appendStartCredits();
+            footer.append('Background Image by ', homeBgCredit);
+        };
+        
+        const appendMenuCredits = () => {
+            appendStartCredits();
+            footer.append("Nigiri Image by ", NigiriCredit, ", Uramaki Image by ", UramakiCredit, ", Inari Image by ", InariCredit);
+        
+        };
+
+        const appendContactCredits = () => {
+            appendStartCredits();
+            footer.append("Restaurant Image by ", restaurantImgCredit);
+        };
+
+        const clearCreditsContainer = () => {
+            while (footer.firstChild) {
+                footer.removeChild(footer.lastChild);
+            }
+        };
+
+        return { getHomeCredits: appendHomeCredits, getMenuCredits: appendMenuCredits, getContactCredits: appendContactCredits, clearCreditsContainer }
+    })();
 
     const initPage = () => {
         mainBackgroundController.giveImageToBackground();
         mainPageContainer.append(loadHomeSection());
+        creditsDisplayController.getHomeCredits();
     };
 
     initPage();
@@ -62,6 +134,8 @@ let displayController = function () {
         let homeSection = loadHomeSection();
         mainPageContainer.append(homeSection);
         mainBackgroundController.giveImageToBackground();
+        creditsDisplayController.clearCreditsContainer();
+        creditsDisplayController.getHomeCredits();
     });
 
     menuBtn.addEventListener('click', () => {
@@ -69,6 +143,8 @@ let displayController = function () {
         contentBackgroundController.giveColorToBackground();
         mainPageContainer.append(loadMenuSection());
         mainBackgroundController.giveColorToBackground('black');
+        creditsDisplayController.clearCreditsContainer();
+        creditsDisplayController.getMenuCredits();
     });
 
     contactBtn.addEventListener('click', () => {
@@ -76,5 +152,7 @@ let displayController = function () {
         contentBackgroundController.giveColorToBackground();
         mainPageContainer.append(loadContactSection());
         mainBackgroundController.giveColorToBackground('black');
+        creditsDisplayController.clearCreditsContainer();
+        creditsDisplayController.getContactCredits();
     });
 }();
