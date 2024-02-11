@@ -17,6 +17,7 @@
   font-family: my-cool-font, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: larger;
   --main-theme-clr: rgb(219, 2, 2);
+  --accent-clr: rgb(132, 40, 218);
   --border-rad-large: 0.8rem;
   --border-rad-small: 0.3rem;
 }
@@ -69,6 +70,7 @@ body {
 
 h1 {
   font-size: 2.7rem;
+  /* text-decoration: underline overline wavy; */
 }
 
 header,
@@ -142,7 +144,7 @@ nav > button::after {
   border-radius: var(--border-rad-small);
   z-index: -1;
   transition: transform 0.3s, opacity 0.3s, background-color 0.3s, width 0.3s;
-  background-color: rgb(132, 40, 218);
+  background-color: var(--accent-clr);
 }
 
 nav > button:hover::after {
@@ -171,6 +173,11 @@ nav > button:hover::after {
 
 .about>h2 {
   font-size: 1.9rem;
+}
+
+.about h2:nth-of-type(2) {
+  padding-top: 0.5rem;
+  border-top: 1px solid rgb(249, 249, 249, 0.3);
 }
 
 .about> :nth-child(n):not(h2, h3) {
@@ -211,6 +218,7 @@ div#content.colored {
 }
 
 .menu>h2 {
+  text-decoration: overline underline;
   letter-spacing: 0.2rem;
   font-size: 2.6rem;
   margin: 0 auto 1.4rem auto;
@@ -284,6 +292,59 @@ div#content.colored {
 }
 
 /*MENU STYLES END*/
+
+
+/* CONTACT STYLES START */
+
+.contact:not(button) {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: var(--main-theme-clr);
+  width: 80%;
+  padding: 2rem;
+  /* border-radius: var(--border-rad-large); */
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.contact form input {
+  appearance: none;
+  border: none;
+
+}
+
+.contact form input:focus {
+  outline: none;
+}
+
+.contact form h2 {
+  text-decoration: overline underline;
+}
+
+.contact form textarea {
+  border: none;
+  appearance: none;
+}
+
+.contact form textarea:focus {
+  border: none;
+  outline: none;
+}
+
+input, textarea {
+  font-size: 1rem;
+  color: black;
+  padding: 0.5rem 1rem;
+}
+
+/* CONTACT STYLES END */
+
 footer a {
   display: inline-block;
 }

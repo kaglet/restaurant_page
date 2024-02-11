@@ -5,7 +5,9 @@ const loadContactPage = function (){
     let emailForm = document.createElement('form');
     let nameInput = document.createElement('input');
     let emailInput = document.createElement('input');
-    let messageInput = document.createElement('textfield');
+    let messageInput = document.createElement('textarea');
+    messageInput.setAttribute('rows', 10);
+    messageInput.setAttribute('cols', 40);
     let sendButton = document.createElement('button');
 
     let cellNumDisplay = document.createElement('p');
