@@ -4,6 +4,11 @@ import loadMenuSection from "./menu.js";
 import './style.css';
 import mainBgUrl from "../assets/images/tamas-pap-zali_zGDWo8-unsplash.jpg";
 
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import '@fortawesome/fontawesome-free/js/solid'
+import '@fortawesome/fontawesome-free/js/regular'
+import '@fortawesome/fontawesome-free/js/brands'
+
 // Display controller to control and manage all of the rendering logic (including initial single time rendering and other services) 
 // This module is so there is no pollution of global variables
 let displayController = function () {
@@ -44,8 +49,11 @@ let displayController = function () {
 
     let creditsDisplayController = (() => {
         let selfCredit = document.createElement('a');
-        selfCredit.href = "https://unsplash.com/photos/orange-flower-with-black-background-zali_zGDWo8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash";
+        selfCredit.href = "https://github.com/kaglet/restaurant_page";
         selfCredit.textContent = "kaglet";
+        let githubIcon = document.createElement('i');
+        githubIcon.classList.add('fa-brands', 'fa-github');
+        selfCredit.append(' ', githubIcon);
 
         let unsplashCredit = document.createElement('a');
         unsplashCredit.href = "https://unsplash.com/photos/orange-flower-with-black-background-zali_zGDWo8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash";

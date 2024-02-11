@@ -13,7 +13,7 @@ const loadContactPage = function (){
     let messageInput = document.createElement('textarea');
     let messageLabel = document.createElement('label');
     
-    messageInput.setAttribute('rows', 10);
+    messageInput.setAttribute('rows', 6);
     messageInput.setAttribute('cols', 40);
     emailInput.setAttribute('placeholder', 'E.g. myname@gmail.com');
     nameInput.setAttribute('placeholder', 'E.g. Andrew');

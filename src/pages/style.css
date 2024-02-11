@@ -1,12 +1,19 @@
 @font-face {
-  font-family: my-cool-font;
-  src: url(../assets/fonts/ProtestRiot-Regular.ttf);
+  font-family: bahianita; /* + - Excellent. Like a stronger arvo */
+  src: url(../assets/fonts/Bahianita/Bahianita-Regular.ttf);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: yanone;
+  src: url(../assets/fonts/Yanone_Kaffeesatz/static/YanoneKaffeesatz-Regular.ttf);
   font-weight: 600;
   font-style: normal;
 }
 
 * {
-  font-family: my-cool-font;
+  font-family: var(--main-font-family);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,14 +21,19 @@
 }
 
 :root {
-  font-family: my-cool-font, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: larger;
+  --main-font-family: bahianita, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --secondary-font-family: yanone;
   --main-theme-clr: rgb(219, 2, 2);
   --accent-clr: rgb(255, 51, 0);
   --border-rad-large: 0.8rem;
   --border-rad-small: 0.3rem;
   --divider: 1px solid rgb(249, 249, 249, 0.3);
   --divider-on-main-theme: 2px solid rgba(255, 217, 0, 0.5);
+  --h1-size: 5.7rem;
+  --h2-size: 4.0rem;
+  --h3-size: 2.7rem;
+  --text-size-normal: 2rem;
+  --text-size-small: 1.7rem;
 }
 
 body {
@@ -38,6 +50,10 @@ body {
 .wobble {
   animation: wobble 0.75s ease-in 1;
   will-change: transform;
+}
+
+p, label, input, button, a, p > span, h3, textarea, footer {
+  font-family: var(--secondary-font-family);
 }
 
 @keyframes wobble {
@@ -71,7 +87,7 @@ body {
 }
 
 h1 {
-  font-size: 2.7rem;
+  font-size: var(--h1-size);
   /* text-decoration: underline overline wavy; */
 }
 
@@ -102,7 +118,7 @@ header {
 
 nav {
   display: flex;
-  gap: 5.6rem;
+  gap: 3.6rem;
 }
 
 nav > button {
@@ -110,7 +126,6 @@ nav > button {
   border: none;
   padding: 0.7rem 5.9rem;
   background-color: transparent;
-  font: inherit;
   border-radius: var(--border-rad-small);
   position: relative;
   transition: all 0.3s;
@@ -158,7 +173,7 @@ nav > button:hover::after {
   align-self: stretch;
   flex: 1;
   display: flex;
-  padding: 5rem;
+  padding: 3rem;
 }
 
 .about {
@@ -170,11 +185,11 @@ nav > button:hover::after {
 }
 
 .about> :nth-child(n) {
-  margin-bottom: 0.8em;
+  margin-bottom: 0.2em;
 }
 
 .about>h2 {
-  font-size: 1.9rem;
+  font-size: var(--h2-size);
 }
 
 .about h2:nth-of-type(2) {
@@ -183,7 +198,7 @@ nav > button:hover::after {
 }
 
 .about> :nth-child(n):not(h2, h3) {
-  font-size: 1.1rem;
+  font-size: var(--text-size-normal);
   font-weight: 100;
 }
 
@@ -224,7 +239,7 @@ div#content.colored {
 .menu > h2, .contact > h2 {
   text-decoration: overline underline;
   letter-spacing: 0.2rem;
-  font-size: 2.6rem;
+  font-size: var(--h2-size);
   color: gold;
 }
 
@@ -234,12 +249,12 @@ div#content.colored {
   width: fit-content;
 }
 
-.menu h3 {
-  font-size: 1.8rem;
+.menu h3, .contact label {
+  font-size: var(--h3-size);
 }
 
 .menu p {
-  font-size: 1.2rem;
+  font-size: var(--text-size-normal);
 }
 
 .items.display {
@@ -303,7 +318,7 @@ div#content.colored {
 /* CONTACT STYLES START */
 .contact:not(button) {
   display: grid;
-  grid-template: 1fr 9fr / 1fr 1fr;
+  grid-template: 1fr 6fr / 1fr 1fr;
   width: 60%;
 }
 
@@ -321,7 +336,7 @@ div#content.colored {
   justify-content: space-between;
   flex-direction: column;
   align-items: stretch;
-  gap: 1.7rem;
+  gap: 0.3rem;
   border-right: var(--divider-on-main-theme);
 }
 
@@ -367,11 +382,11 @@ textarea:focus {
 }
 
 .contact form {
-  font-size: 1rem;
+  font-size: var(--text-size-normal);
 }
 
 .wrapper p {
-  font-size: 1.6rem;
+  font-size: var(--text-size-normal);
 }
 
 .contact form input, textarea {
@@ -380,9 +395,12 @@ textarea:focus {
 
 input, textarea, .contact form button {
   border-radius: var(--border-rad-small);
-  font: inherit;
   color: black;
   padding: 0.3rem 1rem;
+}
+
+input, textarea, .contact form button, nav > button {
+  font-size: var(--text-size-small);
 }
 
 .contact form button {
@@ -398,10 +416,6 @@ input, textarea, .contact form button {
   box-shadow: 0 0 20px 2px rgb(249, 212, 4);
 }
 
-.contact form button, label {
-  font-size: 1.4rem;
-}
-
 label {
   display: block;
 }
@@ -410,9 +424,11 @@ label {
 
 footer a {
   display: inline-block;
+  font: inherit;
 }
 
 footer {
+  font-size: var(--text-size-small);
   position: relative;
   margin: auto;
   width: max-content;
