@@ -58,6 +58,9 @@ let displayController = function () {
 
         let homeBgUrl = document.createElement('a');
 
+        homeBgUrl.href = "https://unsplash.com/photos/orange-flower-with-black-background-zali_zGDWo8";
+        homeBgUrl.textContent = "Unsplash";
+
         let NigiriCredit  = document.createElement('a');
         let UramakiCredit = document.createElement('a');
         let InariCredit = document.createElement('a');
@@ -75,12 +78,24 @@ let displayController = function () {
         let UramakiImgUrl = document.createElement('a');
         let InariImgUrl = document.createElement('a');
 
+        NigiriImgUrl.href = "https://unsplash.com/photos/food-lot-close-up-photography-wmPDe9OnXT4";
+        NigiriImgUrl.textContent = "Unsplash";
+
+        UramakiImgUrl.href = "https://unsplash.com/photos/a-black-plate-topped-with-sushi-next-to-a-cup-of-tea-4_FsMDmCc6A";
+        UramakiImgUrl.textContent = "Unsplash";
+
+        InariImgUrl.href = "https://unsplash.com/photos/sushi-on-black-rectangular-tray-CIlzXVlYQJQ";
+        InariImgUrl.textContent = "Unsplash";
+
         let restaurantImgCredit = document.createElement('a');
 
         restaurantImgCredit.href = 'https://unsplash.com/@krissevinc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash';
         restaurantImgCredit.textContent = 'Kris Sevinc';
 
         let restaurantImgUrl = document.createElement('a');
+
+        restaurantImgUrl.href = "https://unsplash.com/photos/people-sitting-at-the-table-inside-restaurant-NVX55qVyEkE";
+        restaurantImgUrl.textContent = "Unsplash";
 
         let footer = document.querySelector('footer');
 
@@ -90,18 +105,18 @@ let displayController = function () {
 
         const appendHomeCredits = () => {
             appendStartCredits();
-            footer.append('Background Image by ', homeBgCredit);
+            footer.append('Background Image by ', homeBgCredit, ' on ', homeBgUrl);
         };
         
         const appendMenuCredits = () => {
             appendStartCredits();
-            footer.append("Nigiri Image by ", NigiriCredit, ", Uramaki Image by ", UramakiCredit, ", Inari Image by ", InariCredit);
+            footer.append("Nigiri Image by ", NigiriCredit, " on ", NigiriImgUrl , " | Uramaki Image by ", UramakiCredit, " on ", UramakiImgUrl,  " | Inari Image by ", InariCredit, " on ", InariImgUrl);
         
         };
 
         const appendContactCredits = () => {
             appendStartCredits();
-            footer.append("Restaurant Image by ", restaurantImgCredit);
+            footer.append("Restaurant Image by ", restaurantImgCredit, " on ", restaurantImgUrl);
         };
 
         const clearCreditsContainer = () => {
