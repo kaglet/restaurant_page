@@ -56,6 +56,16 @@ p, label, input, button, a, p > span, h3, textarea, footer {
   font-family: var(--secondary-font-family);
 }
 
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes wobble {
   0% {
     transform: scale(1.1);
@@ -129,6 +139,10 @@ nav > button {
   border-radius: var(--border-rad-small);
   position: relative;
   transition: all 0.3s;
+}
+
+nav > button:hover {
+  cursor: grab;
 }
 
 nav > button::before {
@@ -313,6 +327,12 @@ div#content.colored {
   opacity: 0;
   backdrop-filter: none;
 }
+
+.menu > p:last-child:hover {
+  cursor: grab;
+  animation: flash 0.75s ease-in infinite alternate;
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+}
 /*MENU STYLES END*/
 
 /* CONTACT STYLES START */
@@ -414,6 +434,7 @@ input, textarea, .contact form button, nav > button {
 
 .contact form button:hover {
   box-shadow: 0 0 20px 2px rgb(249, 212, 4);
+  cursor: grab;
 }
 
 label {
