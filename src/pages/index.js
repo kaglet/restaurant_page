@@ -1,7 +1,7 @@
 import loadHomeSection from "./home.js";
 import loadContactSection from "./contact.js";
 import loadMenuSection from "./menu.js";
-import './style.css';
+import '../styles/style.css';
 import mainBgUrl from "../assets/images/tamas-pap-zali_zGDWo8-unsplash.jpg";
 
 import '@fortawesome/fontawesome-free/js/fontawesome'
