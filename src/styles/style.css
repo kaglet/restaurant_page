@@ -142,7 +142,7 @@ nav > button {
 }
 
 nav > button:hover {
-  cursor: grab;
+  cursor: pointer;
 }
 
 nav > button::before {
@@ -329,7 +329,7 @@ div#content.colored {
 }
 
 .menu > p:last-child:hover {
-  cursor: grab;
+  cursor: pointer;
   animation: flash 0.75s ease-in infinite alternate;
   animation: name duration timing-function delay iteration-count direction fill-mode;
 }
