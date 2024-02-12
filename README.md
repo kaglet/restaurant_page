@@ -4,6 +4,9 @@ This is a custom restaurant page made as part of [The Odin Project](https://www.
 
 Find the live link [here](https://kaglet.github.io/restaurant_page/).
 
+This is what the page should initially look like on the home tab:
+![image](https://github.com/kaglet/restaurant_page/assets/96872447/a2c2aea2-607c-4230-a627-7c33161d05b7)
+
 ## Skills
 
 As part of the [project requirements](https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page#project-solution), these are the main new skill milestones shown in the project.
