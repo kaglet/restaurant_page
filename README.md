@@ -1,5 +1,6 @@
 # restaurant_page
 
+## About
 This is a custom restaurant page made as part of [The Odin Project](https://www.theodinproject.com/dashboard) open source web dev curriculum. It is created using Webpack, JavaScript, HTML, and CSS. 
 
 Find the live link [here](https://kaglet.github.io/restaurant_page/).
